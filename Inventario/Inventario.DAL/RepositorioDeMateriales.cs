@@ -9,32 +9,32 @@ using System.Threading.Tasks;
 
 namespace Inventario.DAL
 {
-    public class RepositorioDeEmpleados : IRepositorio<Empleado>
+    public class RepositorioDeMateriales : IRepositorio<Material>
     {
         private string DBName = "Inventario.db";
-        private string TableName = "Empleados";
+        private string TableName = "Materiales";
 
-        public List<Empleado> Read
+        public List<Material> Read
         {
             get
             {
-                List<Empleado> datos = new List<Empleado>();
+                List<Material> datos = new List<Material>();
                 using (var db = new LiteDatabase(DBName))
                 {
-                    datos = db.GetCollection<Empleado>(TableName).FindAll().ToList();
+                    datos = db.GetCollection<Material>(TableName).FindAll().ToList();
                 }
                 return datos;
-            }   
+            }
         }
 
-        public bool Create(Empleado entidad)
+        public bool Create(Material entidad)
         {
             entidad.Id = Guid.NewGuid().ToString();
             try
             {
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Material>(TableName);
                     coleccion.Insert(entidad);
                 }
                 return true;
@@ -52,7 +52,7 @@ namespace Inventario.DAL
                 int r;
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Material>(TableName);
                     r = coleccion.Delete(e => e.Id == id);
                 }
                 return r > 0;
@@ -63,13 +63,13 @@ namespace Inventario.DAL
             }
         }
 
-        public bool Update(Empleado entidadModificada)
+        public bool Update(Material entidadModificada)
         {
             try
             {
                 using (var db = new LiteDatabase(DBName))
                 {
-                    var coleccion = db.GetCollection<Empleado>(TableName);
+                    var coleccion = db.GetCollection<Material>(TableName);
                     coleccion.Update(entidadModificada);
                 }
                 return true;

@@ -33,6 +33,11 @@ namespace Inventario.BIZ
             return repositorio.Delete(id);
         }
 
+        public List<Empleado> EmpleadosPorArea(string area)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Modificar(Empleado entidad)
         {
             return repositorio.Update(entidad);
