@@ -15,17 +15,17 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <WrapPanel Grid.Row="0">
+                <WrapPanel Grid.Row="0"> <!--Buttons-->
                     <Button x:Name="btnEmpleadosNuevo" Click="btnEmpleadosNuevo_Click">Nuevo</Button>
                     <Button x:Name="btnEmpleadosEditar" Click="btnEmpleadosEditar_Click">Editar</Button>
                     <Button x:Name="btnEmpleadosGuardar" Click="btnEmpleadosGuardar_Click">Guardar</Button>
                     <Button x:Name="btnEmpleadosCancelar" Click="btnEmpleadosCancelar_Click">Cancelar</Button>
                     <Button x:Name="btnEmpleadosEliminar" Click="btnEmpleadosEliminar_Click">Eliminar</Button>
                 </WrapPanel>
-                <WrapPanel Grid.Row="1">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock>ID: </TextBlock>
-                        <TextBox x:Name="tbxEmpleadosId"></TextBox>
+                <WrapPanel Grid.Row="1"> <!-- Text Box-->
+                    <StackPanel Orientation="Horizontal"><!--mother's-->
+                        <TextBlock>ID: </TextBlock><!--child-->
+                        <TextBox x:Name="tbxEmpleadosId"></TextBox><!--child that saves info-->
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock>Nombre:</TextBlock>
@@ -40,10 +40,50 @@
                         <TextBox x:Name="tbxEmpleadosArea" Width="200"></TextBox>
                     </StackPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgEmpleados" Grid.Row="2" IsReadOnly="False"></DataGrid>
+                <DataGrid x:Name="dtgEmpleados" Grid.Row="2" IsReadOnly="False"></DataGrid> <!--Show data-->
             </Grid>
         </TabItem>
-        <TabItem Header="Materiales"></TabItem>
+        <TabItem Header="Materiales">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <WrapPanel Grid.Row="0">
+                    <!--Buttons-->
+                    <Button x:Name="btnMaterialesNuevo" Click="btnMaterialesNuevo_Click">Nuevo</Button>
+                    <Button x:Name="btnMaterialesEditar" Click="btnMaterialesEditar_Click">Editar</Button>
+                    <Button x:Name="btnMaterialesGuardar" Click="btnMaterialesGuardar_Click">Guardar</Button>
+                    <Button x:Name="btnMaterialesCancelar" Click="btnMaterialesCancelar_Click">Cancelar</Button>
+                    <Button x:Name="btnMaterialesEliminar" Click="btnMaterialesEliminar_Click">Eliminar</Button>
+                </WrapPanel>
+                <WrapPanel Grid.Row="1">
+                    <!-- Text Box-->
+                    <StackPanel Orientation="Horizontal">
+                        <!--mother's-->
+                        <TextBlock>ID:</TextBlock>
+                        <!--child-->
+                        <TextBox x:Name="tbxMaterialesId"></TextBox>
+                        <!--child that saves info-->
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Nombre:</TextBlock>
+                        <TextBox x:Name="tbxMaterialesNombre" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Categoria:</TextBlock>
+                        <TextBox x:Name="tbxMaterialesCategoria" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Descripcion:</TextBlock>
+                        <TextBox x:Name="tbxMaterialesDescripcion" Width="200"></TextBox>
+                    </StackPanel>
+                </WrapPanel>
+                <DataGrid x:Name="dtgMateriales" Grid.Row="2" IsReadOnly="False"></DataGrid>
+                <!--Show data-->
+            </Grid>
+        </TabItem>
         <TabItem Header="Reportes"></TabItem>
     </TabControl>
 </Window>
