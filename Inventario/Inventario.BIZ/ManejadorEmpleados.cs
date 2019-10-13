@@ -35,7 +35,7 @@ namespace Inventario.BIZ
 
         public List<Empleado> EmpleadosPorArea(string area)
         {
-            throw new NotImplementedException();
+            return Listar.Where(e => e.Area == area).ToList();
         }
 
         public bool Modificar(Empleado entidad)

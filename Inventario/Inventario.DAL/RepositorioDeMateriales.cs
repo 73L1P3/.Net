@@ -11,7 +11,7 @@ namespace Inventario.DAL
 {
     public class RepositorioDeMateriales : IRepositorio<Material>
     {
-        private string DBName = "Inventario.db";
+        private string DBName = @"F:\Users\73L1P3\Documents\Visual Studio 2015\DB\Inventario.db";//literal (no caracter de escape)
         private string TableName = "Materiales";
 
         public List<Material> Read
