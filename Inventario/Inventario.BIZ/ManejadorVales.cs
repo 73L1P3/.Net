@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inventario.COMMON.Entidades;
+using System.Collections;
 
 namespace Inventario.BIZ
 {
@@ -20,6 +21,11 @@ namespace Inventario.BIZ
         public bool Agregar(Vale entidad)
         {
             return repositorio.Create(entidad);
+        }
+
+        public IEnumerable BuscarNoEntregadosPorEmpleado(Empleado empleado)
+        {
+            return repositorio.Read.Where(p => p.Solicitante.Id == empleado.Id && p.FechaEntregaReal == null);
         }
 
         public Vale BuscarPorId(string id)

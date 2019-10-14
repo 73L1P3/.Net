@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Inventario.COMMON.Interfaces
 {
@@ -11,6 +12,6 @@ namespace Inventario.COMMON.Interfaces
     {
         List<Vale> ValesPorLiquidar();
         List<Vale> ValesEnIntervalo(DateTime inicio, DateTime fin);
-
+        IEnumerable BuscarNoEntregadosPorEmpleado(Empleado empleado);
     } 
 }

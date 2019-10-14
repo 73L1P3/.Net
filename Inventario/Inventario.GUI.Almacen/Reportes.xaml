@@ -1,0 +1,28 @@
+﻿<Window x:Class="Inventario.GUI.Almacen.Reportes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Inventario.GUI.Almacen"
+        mc:Ignorable="d"
+        Title="Reportes" Height="300" Width="352.101">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Vales por entregar">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>Seleccionar persona</TextBlock>
+                        <ComboBox Width="180" SelectionChanged="cmbPersona_SelectionChanged" x:Name="cmbPersona"></ComboBox>
+                        <Button x:Name="btnImprimirPorPersona">Imprimir</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dtgTablaVales" Grid.Row="1"></DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
+ 

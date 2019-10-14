@@ -1,4 +1,4 @@
-﻿using Inventario.BIZ;
+﻿    using Inventario.BIZ;
 using Inventario.COMMON.Entidades;
 using Inventario.DAL;
 using System;
@@ -205,6 +205,12 @@ namespace Inventario.GUI.Almacen
                 cmbSolicitante.Text = vale.Solicitante.ToString();
                 dtpFechaEntrega.SelectedDate = vale.FechaEntrega;
             }
+        }
+
+        private void btnReportes_Click(object sender, RoutedEventArgs e)
+        {
+            Reportes reportes = new Reportes();
+            reportes.Show();
         }
     }
 }
