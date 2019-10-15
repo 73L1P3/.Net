@@ -39,8 +39,8 @@ namespace Inventario.GUI.Almacen
         {
             if (cmbPersona.SelectedItem != null)
             {
-                dtgTablaVales.ItemsSource = null;
-                dtgTablaVales.ItemsSource = manejadorVales.BuscarNoEntregadosPorEmpleado((cmbPersona.SelectedItem as Empleado));
+                lstVales.ItemsSource = null;
+                lstVales.ItemsSource = manejadorVales.BuscarNoEntregadosPorEmpleado((cmbPersona.SelectedItem as Empleado));
             }
         }
     }

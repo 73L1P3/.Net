@@ -25,7 +25,7 @@ namespace Inventario.BIZ
 
         public IEnumerable BuscarNoEntregadosPorEmpleado(Empleado empleado)
         {
-            return repositorio.Read.Where(p => p.Solicitante.Id == empleado.Id && p.FechaEntregaReal == null);
+            return repositorio.Read.Where(p => p.Solicitante.Id == empleado.Id && p.FechaEntregaReal == null).OrderBy(p=> p.FechaEntrega);
         }
 
         public Vale BuscarPorId(string id)

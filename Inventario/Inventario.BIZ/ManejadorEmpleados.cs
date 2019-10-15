@@ -17,7 +17,7 @@ namespace Inventario.BIZ
             repositorio = repo;
         }
 
-        public List<Empleado> Listar => repositorio.Read;
+        public List<Empleado> Listar => repositorio.Read.OrderBy(p => p.Nombre).ToList()    ;
 
         public bool Agregar(Empleado entidad)
         {
