@@ -79,8 +79,37 @@
                         <TextBlock>Descripcion:</TextBlock>
                         <TextBox x:Name="tbxMaterialesDescripcion" Width="200"></TextBox>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="imgFoto" Height="50" Width="50"></Image>
+                        <Button x:Name="btnCargarFoto" Click="btnCargarFoto_Click">Cargar Foto</Button>
+                    </StackPanel>
                 </WrapPanel>
-                <DataGrid x:Name="dtgMateriales" Grid.Row="2" IsReadOnly="False"></DataGrid>
+                <!--Show data-->
+                <ListView x:Name="lsvMateriales" Grid.Row="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".25*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".75*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding Fotografia}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="50" Width="50"></Image>
+                                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                                    <TextBlock Text="[" FontWeight="Bold"></TextBlock>
+                                    <TextBlock Text="{Binding Categoria}" FontWeight="Bold"></TextBlock>
+                                    <TextBlock Text="] " FontWeight="Bold"></TextBlock>
+                                    <TextBlock Text="{Binding Nombre}"></TextBlock>
+                                </StackPanel>
+                                <Label Grid.Column="1" Grid.Row="1" Content="{Binding Descripcion}"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
                 <!--Show data-->
             </Grid>
         </TabItem>
