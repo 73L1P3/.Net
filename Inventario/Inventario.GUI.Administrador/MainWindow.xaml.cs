@@ -42,8 +42,8 @@ namespace Inventario.GUI.Administrador
             //Main Function
             InitializeComponent();
             //use db 
-            manejadorEmpleados = new ManejadorEmpleados(new RepositorioDeEmpleados());
-            manejadorMateriales = new ManejadorMateriales(new RepositorioDeMateriales());
+            manejadorEmpleados = new ManejadorEmpleados(new RepositorioGenerico<Empleado>());
+            manejadorMateriales = new ManejadorMateriales(new RepositorioGenerico<Material>());
             //Functions
             //Empleados
             PonerBotonesDeEmpleadosEnEdicion(false);
@@ -93,7 +93,7 @@ namespace Inventario.GUI.Administrador
             Empleado emp = dtgEmpleados.SelectedItem as Empleado;
             if (emp != null)
             {
-                tbxEmpleadosId.Text = emp.Id;
+                tbxEmpleadosId.Text = emp.Id.ToString();
                 tbxEmpleadosApellidos.Text = emp.Apellidos;
                 tbxEmpleadosArea.Text = emp.Area;
                 tbxEmpleadosNombre.Text = emp.Nombre;
@@ -230,7 +230,7 @@ namespace Inventario.GUI.Administrador
                 tbxMaterialesCategoria.Text = m.Categoria;
                 tbxMaterialesDescripcion.Text = m.Categoria;
                 tbxMaterialesNombre.Text = m.Nombre;
-                tbxMaterialesId.Text = m.Id;
+                tbxMaterialesId.Text = m.Id.ToString();
                 imgFoto.Source = ByteToImage(m.Fotografia);
             }
         }

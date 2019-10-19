@@ -29,8 +29,8 @@ namespace Inventario.GUI.Almacen
         public Reportes()
         {
             InitializeComponent();
-            manejadorEmpleado = new ManejadorEmpleados(new RepositorioDeEmpleados());
-            manejadorVales = new ManejadorVales(new RepositorioDeVales());
+            manejadorEmpleado = new ManejadorEmpleados(new RepositorioGenerico<Empleado>());
+            manejadorVales = new ManejadorVales(new RepositorioGenerico<Vale>());
             cmbPersona.ItemsSource = manejadorEmpleado.Listar;
 
         }

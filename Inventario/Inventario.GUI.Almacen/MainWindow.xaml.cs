@@ -1,4 +1,4 @@
-﻿    using Inventario.BIZ;
+﻿using Inventario.BIZ;
 using Inventario.COMMON.Entidades;
 using Inventario.DAL;
 using System;
@@ -40,9 +40,9 @@ namespace Inventario.GUI.Almacen
         {
             InitializeComponent();
 
-            manejadorDeVales = new ManejadorVales(new RepositorioDeVales());
-            manejadorDeEmpleados = new ManejadorEmpleados(new RepositorioDeEmpleados());
-            manejadorDeMateriales = new ManejadorMateriales(new RepositorioDeMateriales());
+            manejadorDeVales = new ManejadorVales(new RepositorioGenerico<Vale>());
+            manejadorDeEmpleados = new ManejadorEmpleados(new RepositorioGenerico<Empleado>());
+            manejadorDeMateriales = new ManejadorMateriales(new RepositorioGenerico<Material>());
 
             ActualizarTablaDeVales();
             gridDetalle.IsEnabled = false;
@@ -133,7 +133,7 @@ namespace Inventario.GUI.Almacen
             {
                 vale.EncargadoDeAlmacen = cmbAlmacenista.SelectedItem as Empleado;
                 vale.FechaEntrega = dtpFechaEntrega.SelectedDate.Value;
-                vale.FechaHoraSolicitud = DateTime.Now;
+                vale.FechaHoraSolicitud = DateTime.Now.AddHours(-6);
                 //vale.FechaEntregaReal
                 vale.Solicitante = cmbSolicitante.SelectedItem as Empleado;
 
@@ -153,7 +153,7 @@ namespace Inventario.GUI.Almacen
             {
                 vale.EncargadoDeAlmacen = cmbAlmacenista.SelectedItem as Empleado;
                 vale.FechaEntrega = dtpFechaEntrega.SelectedDate.Value;
-                vale.FechaHoraSolicitud = DateTime.Now;
+                vale.FechaHoraSolicitud = DateTime.Now.AddHours(-6);
                 //vale.FechaEntregaReal
                 vale.Solicitante = cmbSolicitante.SelectedItem as Empleado;
                 vale.FechaEntregaReal = DateTime.Parse(lblFechaHoraEntregaReal.Content.ToString());

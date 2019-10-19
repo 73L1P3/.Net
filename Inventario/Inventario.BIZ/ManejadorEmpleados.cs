@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using MongoDB.Bson;
 
 namespace Inventario.BIZ
 {
@@ -24,12 +25,12 @@ namespace Inventario.BIZ
             return repositorio.Create(entidad);
         }
 
-        public Empleado BuscarPorId(string id)
+        public Empleado BuscarPorId(ObjectId id)
         {
             return Listar.Where(e => e.Id == id).SingleOrDefault();
         }
 
-        public bool Eliminar(string id)
+        public bool Eliminar(ObjectId id)
         {
             return repositorio.Delete(id);
         }

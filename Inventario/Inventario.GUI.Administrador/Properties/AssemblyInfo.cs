@@ -7,10 +7,10 @@ using System.Windows;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Inventario.GUI.Administrador")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Administrador de Todo Inventarios v.1")]
+[assembly: AssemblyDescription("Software especializado en la creacion de inventarios")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("EmpresaImportante S.A")]
 [assembly: AssemblyProduct("Inventario.GUI.Administrador")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

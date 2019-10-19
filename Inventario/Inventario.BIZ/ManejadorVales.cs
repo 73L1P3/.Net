@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Inventario.COMMON.Entidades;
 using System.Collections;
+using MongoDB.Bson;
 
 namespace Inventario.BIZ
 {
@@ -28,12 +29,12 @@ namespace Inventario.BIZ
             return repositorio.Read.Where(p => p.Solicitante.Id == empleado.Id && p.FechaEntregaReal == null).OrderBy(p=> p.FechaEntrega);
         }
 
-        public Vale BuscarPorId(string id)
+        public Vale BuscarPorId(ObjectId id)
         {
             return Listar.Where(e => e.Id == id).SingleOrDefault();
         }
 
-        public bool Eliminar(string id)
+        public bool Eliminar(ObjectId id)
         {
             return repositorio.Delete(id);
         }
