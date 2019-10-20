@@ -51,7 +51,7 @@ namespace Inventario.BIZ
 
         public List<Vale> ValesPorLiquidar()
         {
-            throw new NotImplementedException();
+            return repositorio.Read.Where(p=> p.FechaEntregaReal == null).ToList();
         }
     }
 }

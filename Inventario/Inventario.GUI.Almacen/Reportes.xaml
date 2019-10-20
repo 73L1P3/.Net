@@ -17,7 +17,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock>Seleccionar persona</TextBlock>
                         <ComboBox Width="180" SelectionChanged="cmbPersona_SelectionChanged" x:Name="cmbPersona"></ComboBox>
-                        <Button x:Name="btnImprimirPorPersona">Imprimir</Button>
+                        <Button x:Name="btnImprimirPorPersona" Click="btnImprimirPorPersona_Click">Imprimir</Button>
                     </StackPanel>
                     <ListView x:Name="lstVales" Grid.Row="1">
                         <ListView.ItemTemplate>

@@ -1,7 +1,9 @@
 ﻿using Inventario.BIZ;
 using Inventario.COMMON.Entidades;
 using Inventario.COMMON.Interfaces;
+using Inventario.COMMON.Modelos;
 using Inventario.DAL;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,23 @@ namespace Inventario.GUI.Almacen
                 lstVales.ItemsSource = null;
                 lstVales.ItemsSource = manejadorVales.BuscarNoEntregadosPorEmpleado((cmbPersona.SelectedItem as Empleado));
             }
+        }
+
+        private void btnImprimirPorPersona_Click(object sender, RoutedEventArgs e)
+        {
+            List<ReportDataSource> datos = new List<ReportDataSource>();
+            ReportDataSource vales = new ReportDataSource();
+            List<ModelValesParaReporte> valesporentregar = new List<ModelValesParaReporte>();
+            foreach (var item in manejadorVales.ValesPorLiquidar())
+            {
+                valesporentregar.Add(new ModelValesParaReporte(item));
+            }
+            vales.Value = valesporentregar;
+            vales.Name = "DataSet1";
+            datos.Add(vales);
+
+            Reporteador ventana = new Reporteador("Inventario.GUI.Almacen.Reportes.SinParametros.rdlc", datos);
+            ventana.ShowDialog();
         }
     }
 }

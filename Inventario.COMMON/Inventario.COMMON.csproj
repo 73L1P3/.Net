@@ -89,6 +89,7 @@
     <Compile Include="Interfaces\IManejadorMateriales.cs" />
     <Compile Include="Interfaces\IManejadorVales.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
+    <Compile Include="Modelos\ModelValesParaReporte.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
